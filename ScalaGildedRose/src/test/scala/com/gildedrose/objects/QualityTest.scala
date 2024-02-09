@@ -11,4 +11,18 @@ class QualityTest extends AnyFlatSpec with Matchers {
 
     newQuality.value should equal (quality.value - 1)
   }
+
+  it should "reduce the quality by two" in {
+    val quality = Quality(2)
+    val newQuality = quality.reduceX2()
+
+    newQuality.value should equal(quality.value - 2)
+  }
+
+  it should "increase the quality by one" in {
+    val quality = Quality(2)
+    val newQuality = quality.increase()
+
+    newQuality.value should equal(quality.value + 1)
+  }
 }
